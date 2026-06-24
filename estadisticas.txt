@@ -1,0 +1,46 @@
+===================================================================
+ MS-CFLP-CI  -  Recocido Simulado: comparativa de configuraciones
+ Generado: 2026-06-23 20:05:05   |   Semilla fija: 12345
+===================================================================
+
+ Configuraciones:
+   base      ->  alpha = 0.97 , recalentamientos = 3
+   agresivo  ->  alpha = 0.90 , recalentamientos = 5
+
+-------------------------------------------------------------------
+ Configuracion: base
+-------------------------------------------------------------------
+Inst        n    m   alpha  reheats  Iteraciones      t(ms)
+inst01      5    3    0.97        3       88000         38
+inst02     10    5    0.97        3      389994        305
+inst03     20    8    0.97        3      920620       1612
+inst04     40   12    0.97        3     2128379      10592
+inst05     70   18    0.97        3     3811283      92867
+inst06    120   25    0.97        3     6521872     670217
+
+-------------------------------------------------------------------
+ Configuracion: agresivo
+-------------------------------------------------------------------
+Inst        n    m   alpha  reheats  Iteraciones      t(ms)
+inst01      5    3    0.90        5      127000         52
+inst02     10    5    0.90        5      323971        239
+inst03     20    8    0.90        5      647457       1103
+inst04     40   12    0.90        5     1293843       6664
+inst05     70   18    0.90        5     2260564      59512
+inst06    120   25    0.90        5     3871316     456971
+
+===================================================================
+ COMPARATIVA  (base  vs  agresivo)
+===================================================================
+Inst          Z    Iter.base     Iter.agr    t.base     t.agr      dt%
+inst01      580       88000      127000        38        52   -36.8%
+inst02      799      389994      323971       305       239   +21.6%
+inst03     1346      920620      647457      1612      1103   +31.6%
+inst04     2127     2128379     1293843     10592      6664   +37.1%
+inst05     3012     3811283     2260564     92867     59512   +35.9%
+inst06     5009     6521872     3871316    670217    456971   +31.8%
+
+ dt%  = reduccion relativa del tiempo de la config. agresiva
+        respecto de la base ( + = la agresiva fue mas rapida ).
+ Z    = costo objetivo de la mejor solucion (debe coincidir entre
+        ambas configuraciones bajo la misma semilla).
