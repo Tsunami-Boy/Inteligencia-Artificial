@@ -28,7 +28,7 @@ Makefile            Compilación y experimentos
 En Windows el ejecutable de make es `mingw32-make`; en Linux es `make`.
 
 **Compilar y correr las pruebas** (configuraciones base y agresiva sobre las 6 instancias).
-Genera `estadisticas.txt`:
+Genera `estadisticas.txt` que son presentadas en el informe final:
 
 ```
 # Windows
@@ -46,35 +46,4 @@ mingw32-make run
 
 # Linux
 make run
-```
-
-## Ejecución directa del binario
-
-```
-./mscflpci <archivo_instancia> [semilla] [-v] [--alpha=A] [--reheats=N]
-```
-
-- `semilla` (opcional): entero para reproducibilidad (`0` o ausente = aleatoria).
-- `-v` (opcional): muestra el progreso del enfriamiento.
-- `--alpha=A` (opcional): factor de enfriamiento geométrico.
-- `--reheats=N` (opcional): número de recalentamientos.
-
-Ejemplo:
-
-```
-./mscflpci instances/inst01.txt 12345
-```
-
-## Formato de instancia
-
-Índices de clientes e instalaciones comienzan en `0`:
-
-```
-n m                    (nº de clientes y de instalaciones)
-d[0] ... d[n-1]        (demandas)
-s[0] ... s[m-1]        (capacidades)
-f[0] ... f[m-1]        (costos fijos de apertura)
-c[i][0] ... c[i][m-1]  (n filas: costo unitario de transporte)
-num_inc                (nº de pares incompatibles)
-i k                    (un par incompatible por línea)
 ```
